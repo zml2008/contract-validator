@@ -133,7 +133,7 @@ class ContractValueValidationListener extends JbContractBaseListener {
     final int possibleParameters = this.targetElement.getParameters().size();
     if (paramNum > possibleParameters) {
       this.messager.print(Diagnostic.Kind.ERROR, String.format(
-        "Return value was declared to affect parameter %d, but only %d parameters exist",
+        "Return value was declared to affect parameter %d, but only %d parameter(s) exist",
         paramNum,
         possibleParameters
       ));

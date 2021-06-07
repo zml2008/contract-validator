@@ -56,6 +56,16 @@ public class ContractMutatesValidatorTest extends AbstractTest {
   }
 
   @Test
+  void testMutatesFailsWhenParameterOutOfIntegerBounds() {
+    assertTrue(assertThrows(ReflectException.class, () -> this.compile("import org.jetbrains.annotations.Contract;\n"
+      + "\n"
+      + "class TestMutatesParam {\n"
+      + "  @Contract(mutates=\"param99999999999999\")\n"
+      + "  public static void test(final int x, final double y) {}\n"
+      + "}")).getMessage().contains("was not a valid integer"));
+  }
+
+  @Test
   void testMutatesFailsWhenParameterZero() {
     assertTrue(assertThrows(ReflectException.class, () -> this.compile("import org.jetbrains.annotations.Contract;\n"
       + "\n"
