@@ -8,13 +8,19 @@ This does not validate the contracts themselves.
 
 ## Usage
 
-The contract validator requires Java 8 or later, and is published on maven central:
+The contract validator requires Java 8 or later, and is published on maven central. It runs as an annotation processor at compile time.
+
+### Gradle
 
 ```gradle
 dependencies {
-  annotationProcessor("ca.stellardrift:contract-validator:0.1")
+  annotationProcessor("ca.stellardrift:contract-validator:1.0.0")
 }
 ```
+
+### <other build tools>
+
+It should work, if you use another build tool feel free to help fill out this section
 
 ## License
 
