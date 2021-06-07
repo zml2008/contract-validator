@@ -1,0 +1,22 @@
+metadata:
+  format: {version: 1.0}
+  polyglot-extensions: [plugins]
+
+plugins:
+  ca.stellardrift.opinionated: 5.0.0
+  net.kyori.indra.publishing.sonatype: 2.0.5
+
+dependencies:
+  # processor itself
+  autoService-processor: {group: com.google.auto.service, name: auto-service, version: &autoService 1.0}
+  autoService-annotations: {group: com.google.auto.service, name: auto-service-annotations, version: *autoService}
+  antlr-generator: {group: org.antlr, name: antlr4, version: &antlr 4.9.2}
+  antlr-runtime: {group: org.antlr, name: antlr4-runtime, version: *antlr}
+
+  # test
+  junit-api: {group: org.junit.jupiter, name: junit-jupiter-api, version: &junit 5.7.2}
+  junit-engine: {group: org.junit.jupiter, name: junit-jupiter-engine, version: *junit}
+  joor: {group: org.jooq, name: joor, version: 0.9.13}
+  jetbrainsAnnotations: {group: org.jetbrains, name: annotations, version: 21.0.1}
+
+

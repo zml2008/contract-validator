@@ -1,0 +1,65 @@
+plugins {
+  id 'antlr'
+  id 'jacoco'
+  id 'ca.stellardrift.opinionated'
+  id 'net.kyori.indra.publishing.sonatype'
+}
+
+group = "ca.stellardrift"
+version = "1.0-SNAPSHOT"
+description = "A validator for @Contract from the JetBrains annotations"
+
+repositories {
+  stellardriftReleases()
+  stellardriftSnapshots()
+}
+
+configurations.api {
+  exclude group: "org.antlr", module: "antlr4"
+}
+
+dependencies {
+  annotationProcessor(libs.autoService.processor)
+  compileOnlyApi(libs.autoService.annotations)
+  antlr(libs.antlr.generator)
+  implementation(libs.antlr.runtime)
+
+  testImplementation(libs.junit.api)
+  testImplementation(libs.joor)
+  testImplementation(libs.jetbrainsAnnotations)
+  testRuntimeOnly(libs.junit.engine)
+}
+
+indra {
+  github("zml2008", "contract-validator") {
+    ci(true)
+  }
+  license {
+    name("GNU Lesser General Public License v3.0 or later")
+    url("https://www.gnu.org/licenses/lgpl-3.0.html")
+    spdx("LGPL-3.0-or-later")
+  }
+
+  configurePublications {
+    pom {
+      developers {
+        developer {
+          id = "zml"
+          email = "zml [at] stellardrift . ca"
+          timezone = "America/Vancouver"
+        }
+      }
+    }
+  }
+
+  publishReleasesTo("stellardrift", "https://repo.stellardrift.ca/repository/releases/")
+  publishSnapshotsTo("stellardrift", "https://repo.stellardrift.ca/repository/snapshots/")
+}
+
+test {
+  finalizedBy jacocoTestReport
+}
+
+jacocoTestReport {
+  dependsOn test
+}
