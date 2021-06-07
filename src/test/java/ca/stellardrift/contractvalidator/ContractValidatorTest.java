@@ -30,7 +30,7 @@ public class ContractValidatorTest extends AbstractTest {
   void testValidContract() {
     assertDoesNotThrow(() -> this.compile(""
       + "import org.jetbrains.annotations.Contract;\n"
-      + "class Test {\n"
+      + "class TestValid {\n"
       + "  @Contract(\"null -> null; !null -> _\")\n"
       + "  public static String toStrOrNull(final Object x) { return x == null ? null : x.toString(); }\n"
       + "}"));
@@ -40,7 +40,7 @@ public class ContractValidatorTest extends AbstractTest {
   void testNullFailsOnPrimitives() {
     assertTrue(assertThrows(ReflectException.class, () -> this.compile("import org.jetbrains.annotations.Contract;\n"
       + "\n"
-      + "class Test {\n"
+      + "class TestNullFails {\n"
       + "  @Contract(\"null -> fail\")\n"
       + "  public void test(final int x) {}\n"
       + "}"))
@@ -51,7 +51,7 @@ public class ContractValidatorTest extends AbstractTest {
   void testNoArgMethodsPermitted() {
     assertDoesNotThrow(() -> this.compile("import org.jetbrains.annotations.Contract;\n"
       + "\n"
-      + "class Test {\n"
+      + "class TestNoArg {\n"
       + "  @Contract(\"-> new\")\n"
       + "  public Object test() { return new Object(); }\n"
       + "}"));
