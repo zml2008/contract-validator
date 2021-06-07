@@ -6,7 +6,7 @@ package ca.stellardrift.contractvalidator;
 
 // Contract(value="<contract>")
 contract: clause (';' clause)* EOF;
-clause: args '->' effect;
+clause: args? '->' effect;
 args: constraint (',' constraint)*;
 constraint: ANY          # OtherConstraint
           | NULL         # NonPrimitiveConstraint

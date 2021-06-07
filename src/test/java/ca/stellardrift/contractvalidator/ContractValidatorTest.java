@@ -47,6 +47,16 @@ public class ContractValidatorTest extends AbstractTest {
       .getMessage().contains("Constraint 'null' is only applicable to non-primitive types"));
   }
 
+  @Test
+  void testNoArgMethodsPermitted() {
+    assertDoesNotThrow(() -> this.compile("import org.jetbrains.annotations.Contract;\n"
+      + "\n"
+      + "class Test {\n"
+      + "  @Contract(\"-> new\")\n"
+      + "  public Object test() { return new Object(); }\n"
+      + "}"));
+  }
+
   // todo: finish the cases here
 
 }
