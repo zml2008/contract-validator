@@ -68,3 +68,12 @@ test {
 jacocoTestReport {
   dependsOn test
 }
+
+// Workaround for Gradle not adding antlr output properly
+checkLicenseMain {
+  dependsOn generateGrammarSource
+}
+
+sourcesJar {
+  dependsOn generateGrammarSource
+}
