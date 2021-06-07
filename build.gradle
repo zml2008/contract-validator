@@ -40,6 +40,10 @@ indra {
     spdx("LGPL-3.0-or-later")
   }
 
+  javaVersions {
+    testWith(8, 11, 16)
+  }
+
   configurePublications {
     pom {
       developers {
