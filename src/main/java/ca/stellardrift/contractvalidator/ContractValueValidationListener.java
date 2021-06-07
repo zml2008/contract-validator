@@ -28,7 +28,7 @@ import javax.lang.model.type.TypeKind;
 import javax.lang.model.type.TypeMirror;
 import javax.tools.Diagnostic;
 
-public class ContractValueValidationListener extends JbContractBaseListener {
+class ContractValueValidationListener extends JbContractBaseListener {
 
   private final ExecutableElement targetElement;
   private final ErrorConsumer messager;

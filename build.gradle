@@ -15,7 +15,7 @@ repositories {
 }
 
 configurations.api {
-  exclude group: "org.antlr", module: "antlr4"
+  extendsFrom = extendsFrom.findAll { it != configurations.antlr }
 }
 
 dependencies {

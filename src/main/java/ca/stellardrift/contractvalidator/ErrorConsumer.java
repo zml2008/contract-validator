@@ -24,7 +24,7 @@ import javax.tools.Diagnostic;
  * specified by the provider
  */
 @FunctionalInterface
-public interface ErrorConsumer {
+interface ErrorConsumer {
 
   // TODO: allow passing the position in the parsed stream, probably via a Token
   void print(final Diagnostic.Kind kind, final CharSequence message);

@@ -28,7 +28,7 @@ import java.util.BitSet;
 
 import javax.tools.Diagnostic;
 
-public class ParseErrorListener extends BaseErrorListener {
+class ParseErrorListener extends BaseErrorListener {
 
   private final String input;
   private final ErrorConsumer messager;
