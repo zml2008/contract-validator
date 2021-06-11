@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "ca.stellardrift"
-version = "1.0.0"
+version = "1.0.1-SNAPSHOT"
 description = "A validator for @Contract from the JetBrains annotations"
 
 repositories {
