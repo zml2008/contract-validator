@@ -1,6 +1,6 @@
 # @Contract Validator for JetBrains Annotations
 
-![GitHub Workflow Status (branch)](https://img.shields.io/github/actions/workflow/status/zml2008/contract-validator/CI?branch=trunk) [![LGPL v3.0 or later License](https://img.shields.io/badge/license-LGPL--3.0-blue)](COPYING.LESSER) [![Maven Central](https://img.shields.io/maven-central/v/ca.stellardrift/contract-validator?label=stable)](https://search.maven.org/search?q=g:ca.stellardrift%20AND%20a:contract-validator*) ![Sonatype Nexus (Snapshots)](https://img.shields.io/nexus/s/ca.stellardrift/contract-validator?label=dev&server=https%3A%2F%2Foss.sonatype.org)
+![GitHub Workflow Status (branch)](https://img.shields.io/github/actions/workflow/status/zml2008/contract-validator/ci.yaml?branch=trunk) [![LGPL v3.0 or later License](https://img.shields.io/badge/license-LGPL--3.0-blue)](COPYING.LESSER) [![Maven Central](https://img.shields.io/maven-central/v/ca.stellardrift/contract-validator?label=stable)](https://search.maven.org/search?q=g:ca.stellardrift%20AND%20a:contract-validator*) ![Sonatype Nexus (Snapshots)](https://img.shields.io/nexus/s/ca.stellardrift/contract-validator?label=dev&server=https%3A%2F%2Foss.sonatype.org)
 
 This is a simple annotation processor to validate the syntax used for `@Contract` annotations.
 
