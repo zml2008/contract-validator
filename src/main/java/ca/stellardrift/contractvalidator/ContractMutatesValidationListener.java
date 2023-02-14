@@ -19,7 +19,6 @@ package ca.stellardrift.contractvalidator;
 
 import java.util.HashSet;
 import java.util.Set;
-
 import javax.lang.model.element.ExecutableElement;
 import javax.lang.model.element.Modifier;
 import javax.tools.Diagnostic;

@@ -17,12 +17,12 @@
  */
 package ca.stellardrift.contractvalidator;
 
+import org.joor.ReflectException;
+import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
-import org.joor.ReflectException;
-import org.junit.jupiter.api.Test;
 
 public class ContractMutatesValidatorTest extends AbstractTest {
   @Test

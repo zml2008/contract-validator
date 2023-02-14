@@ -17,16 +17,14 @@
  */
 package ca.stellardrift.contractvalidator;
 
-import org.antlr.v4.runtime.ParserRuleContext;
-
 import java.util.List;
-
 import javax.lang.model.element.ExecutableElement;
 import javax.lang.model.element.Modifier;
 import javax.lang.model.element.VariableElement;
 import javax.lang.model.type.TypeKind;
 import javax.lang.model.type.TypeMirror;
 import javax.tools.Diagnostic;
+import org.antlr.v4.runtime.ParserRuleContext;
 
 class ContractValueValidationListener extends JbContractBaseListener {
 

@@ -9,11 +9,6 @@ group = "ca.stellardrift"
 version = "1.0.2-SNAPSHOT"
 description = "A validator for @Contract from the JetBrains annotations"
 
-repositories {
-  stellardriftReleases()
-  stellardriftSnapshots()
-}
-
 configurations.api {
   // https://github.com/gradle/gradle/issues/820
   extendsFrom = extendsFrom.findAll { it != configurations.antlr }
@@ -36,13 +31,13 @@ indra {
     ci(true)
   }
   license {
-    name("GNU Lesser General Public License v3.0 or later")
-    url("https://www.gnu.org/licenses/lgpl-3.0.html")
-    spdx("LGPL-3.0-or-later")
+    name "GNU Lesser General Public License v3.0 or later"
+    url "https://www.gnu.org/licenses/lgpl-3.0.html"
+    spdx "LGPL-3.0-or-later"
   }
 
   javaVersions {
-    testWith(8, 11, 16)
+    testWith 11, 17, 19
   }
 
   configurePublications {
@@ -69,10 +64,14 @@ jacocoTestReport {
   dependsOn test
 }
 
-// Workaround for Gradle not adding antlr output properly
-checkLicenseMain {
-  dependsOn generateGrammarSource
+spotless.java {
+  targetExclude 'build/generated-src/**'
 }
+
+// Workaround for Gradle not adding antlr output properly
+/*spotlessCheckJava {
+  dependsOn generateGrammarSource
+}*/
 
 sourcesJar {
   dependsOn generateGrammarSource

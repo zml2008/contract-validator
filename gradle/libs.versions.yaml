@@ -3,20 +3,20 @@ metadata:
   polyglot-extensions: [plugins]
 
 plugins:
-  ca.stellardrift.opinionated: 5.0.0
-  net.kyori.indra.publishing.sonatype: 2.0.6
+  ca.stellardrift.opinionated: 6.0.1
+  net.kyori.indra.publishing.sonatype: 3.0.1
 
 dependencies:
   # processor itself
-  autoService-processor: {group: com.google.auto.service, name: auto-service, version: &autoService 1.0}
+  autoService-processor: {group: com.google.auto.service, name: auto-service, version: &autoService "1.0.1"}
   autoService-annotations: {group: com.google.auto.service, name: auto-service-annotations, version: *autoService}
-  antlr-generator: {group: org.antlr, name: antlr4, version: &antlr 4.9.2}
+  antlr-generator: {group: org.antlr, name: antlr4, version: &antlr 4.11.1}
   antlr-runtime: {group: org.antlr, name: antlr4-runtime, version: *antlr}
 
   # test
-  junit-api: {group: org.junit.jupiter, name: junit-jupiter-api, version: &junit 5.7.2}
+  junit-api: {group: org.junit.jupiter, name: junit-jupiter-api, version: &junit 5.9.2}
   junit-engine: {group: org.junit.jupiter, name: junit-jupiter-engine, version: *junit}
   joor: {group: org.jooq, name: joor-java-8, version: 0.9.13}
-  jetbrainsAnnotations: {group: org.jetbrains, name: annotations, version: 22.0.0}
+  jetbrainsAnnotations: {group: org.jetbrains, name: annotations, version: 24.0.0}
 
 

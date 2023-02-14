@@ -30,7 +30,7 @@ public class AbstractTest {
   private int compileIndex;
 
   @BeforeEach
-  private void setupContext(final TestInfo info) {
+  void setupContext(final TestInfo info) {
     this.testName = info.getDisplayName().replace(' ', '_');
     if (this.testName.length() > 1 && !Character.isUpperCase(this.testName.charAt(0))) {
       this.testName = Character.toUpperCase(this.testName.charAt(0)) + this.testName.substring(1);

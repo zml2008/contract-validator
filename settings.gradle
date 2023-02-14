@@ -1,3 +1,5 @@
+import org.gradle.api.initialization.resolve.RepositoriesMode
+
 pluginManagement {
   repositories {
     maven {
@@ -15,7 +17,13 @@ pluginManagement {
 
 plugins {
   id 'ca.stellardrift.polyglot-version-catalogs' version '6.0.1'
+  id 'org.gradle.toolchains.foojay-resolver-convention' version '0.4.0'
 }
 
 rootProject.name = "contract-validator"
+
+dependencyResolutionManagement {
+  repositoriesMode = RepositoriesMode.FAIL_ON_PROJECT_REPOS
+  pluginManagement.repositories.each(repositories.&add)
+}
 
