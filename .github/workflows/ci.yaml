@@ -27,7 +27,7 @@ jobs:
           distribution: temurin
           java-version: 11
       - name: Validate Gradle wrapper
-        uses: gradle/wrapper-validation-action@v2
+        uses: gradle/wrapper-validation-action@v3
 
       # Actually build
       - name: Build with Gradle
